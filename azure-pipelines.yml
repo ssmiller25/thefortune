@@ -5,16 +5,14 @@
 
 trigger:
 - master
+- pr
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
     make test
-    sudo apt-get install fortune
+    sudo apt-get -y install fortune
     strfile devops
   displayName: 'Verify fortune file'
