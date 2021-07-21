@@ -14,5 +14,5 @@ test:
 .PHONY: cleanfile
 cleanfile:
 	# Clean out any smart quotes
-	sed -i .bak s/[”“]/'"'/g devops
+	sed -i.bak s/[”“]/'"'/g devops
 	@echo "File is clean"
