@@ -16,3 +16,9 @@ cleanfile:
 	# Clean out any smart quotes
 	sed -i.bak s/[”“]/'"'/g devops
 	@echo "File is clean"
+
+docker-build:
+	@docker build . -t ssmiller25/thefortune:latest
+
+docker-run:
+	@docker run -it ssmiller25/thefortune:latest
