@@ -1,0 +1,5 @@
+schema: spec-driven
+
+context: |
+  This repo is a fortune-file collection. CI only validates and compiles the
+  `devops` fortune file; there is no build or deploy step.
