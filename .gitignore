@@ -1,2 +1,6 @@
 *.bak
 *.dat
+/thefortune
+/thefortune.exe
+/fortune
+/fortune.exe
