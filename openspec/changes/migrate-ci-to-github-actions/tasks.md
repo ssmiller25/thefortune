@@ -16,10 +16,10 @@
 
 ## 3. Cutover
 
-- [ ] 3.1 Open a PR with the workflow and confirm it runs green.
-- [ ] 3.2 Merge the PR.
-- [ ] 3.3 Delete `azure-pipelines.yml`.
-- [ ] 3.4 Update branch protection required checks, if any, to reference the new "test" check.
+- [x] 3.1 Open a PR with the workflow and confirm it runs green. (PR #23; the `test` job succeeded on the `pull_request` event.)
+- [x] 3.2 Merge the PR. (Merged to `master` as `1093415` on 2026-10-03; review requirement overridden by the author.)
+- [x] 3.3 Delete `azure-pipelines.yml`. (Removed once the GitHub Actions `test` job was green on `master`.)
+- [x] 3.4 Update branch protection required checks, if any, to reference the new "test" check. (Not applicable: `master` has no `required_status_checks` configured, so nothing referenced the old Azure check.)
 - [ ] 3.5 Delete the Azure DevOps pipeline definition after a grace period.
 
 ## 4. Specification
@@ -33,5 +33,5 @@
 
 ## 5. Verification
 
-- [ ] 5.1 Confirm a push to `master` and a PR to `master` both trigger the workflow.
-- [ ] 5.2 Confirm the README badge reflects the GitHub Actions run status.
+- [x] 5.1 Confirm a push to `master` and a PR to `master` both trigger the workflow. (`pull_request` run on `migration/gh-actions` and `push` run `37129883854` on `master` both completed successfully.)
+- [x] 5.2 Confirm the README badge reflects the GitHub Actions run status. (Badge returns HTTP 200 with title `CI - passing`.)
