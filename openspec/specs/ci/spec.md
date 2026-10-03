@@ -7,16 +7,6 @@ compiles it with `strfile` so it stays usable by `fortune`.
 
 ## Requirements
 
-### Requirement: Azure Pipelines provider
-
-The CI pipeline SHALL be defined in `azure-pipelines.yml` and run on Azure
-Pipelines.
-
-#### Scenario: Azure Pipelines definition
-
-- **WHEN** the CI pipeline runs
-- **THEN** it uses the `azure-pipelines.yml` definition on Azure Pipelines
-
 ### Requirement: CI triggers
 
 The CI pipeline SHALL run on pushes to `master` and on pull requests targeting
@@ -34,21 +24,23 @@ The CI pipeline SHALL run on pushes to `master` and on pull requests targeting
 
 ### Requirement: CI runner
 
-The CI pipeline SHALL execute on a Microsoft-hosted Ubuntu Linux runner.
+The CI pipeline SHALL execute on a GitHub-hosted Ubuntu Linux runner.
 
 #### Scenario: Ubuntu runner
 
 - **WHEN** the CI pipeline runs
-- **THEN** it executes on the `ubuntu-latest` Azure Pipelines image
+- **THEN** it executes on a `ubuntu-latest` GitHub Actions runner
 
 ### Requirement: Fortune file validation
 
-The CI pipeline SHALL validate the `devops` fortune file by running `make test`.
+The CI pipeline SHALL validate the `devops` fortune file by running `make test`
+in a GitHub Actions workflow.
 
 #### Scenario: Validation step
 
-- **WHEN** the CI pipeline runs
-- **THEN** it runs `make test`
+- **WHEN** the workflow runs
+- **THEN** it checks out the repository
+- **AND** it runs `make test`
 - **AND** the run fails if the file contains smart quotes or duplicate entries
 
 ### Requirement: Fortune file compilation
@@ -58,16 +50,17 @@ file with `strfile`.
 
 #### Scenario: Install and compile
 
-- **WHEN** the CI pipeline runs
-- **THEN** it installs the `fortune` package
+- **WHEN** the workflow runs
+- **THEN** it refreshes the apt package index and installs the `fortune` package
 - **AND** it runs `strfile devops`
 
 ### Requirement: Build status badge
 
-The README SHALL display a build status badge for the CI pipeline.
+The README SHALL display a GitHub Actions build status badge for the CI
+workflow.
 
 #### Scenario: Badge in README
 
 - **WHEN** the README is rendered
-- **THEN** it shows an Azure DevOps build status badge reflecting the latest
-  pipeline run
+- **THEN** it shows a GitHub Actions badge pointing at the CI workflow
+- **AND** the badge is no longer sourced from Azure DevOps

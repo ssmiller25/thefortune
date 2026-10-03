@@ -1,6 +1,6 @@
 # Fortune files for those of us.
 
-[![Build Status](https://dev.azure.com/ssmiller25/thefortune/_apis/build/status/ssmiller25.thefortune?branchName=master)](https://dev.azure.com/ssmiller25/thefortune/_build/latest?definitionId=1&branchName=master)
+[![CI](https://github.com/ssmiller25/thefortune/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ssmiller25/thefortune/actions/workflows/ci.yml?query=branch%3Amaster)
 
 To compile fortune
 ```sh
