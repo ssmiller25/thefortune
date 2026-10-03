@@ -20,7 +20,7 @@
 - [x] 3.2 Merge the PR. (Merged to `master` as `1093415` on 2026-10-03; review requirement overridden by the author.)
 - [x] 3.3 Delete `azure-pipelines.yml`. (Removed once the GitHub Actions `test` job was green on `master`.)
 - [x] 3.4 Update branch protection required checks, if any, to reference the new "test" check. (Not applicable: `master` has no `required_status_checks` configured, so nothing referenced the old Azure check.)
-- [ ] 3.5 Delete the Azure DevOps pipeline definition after a grace period.
+- [x] 3.5 Delete the Azure DevOps pipeline definition after a grace period. (Deleted manually from the Azure DevOps console by the repo owner on 2026-10-03, after the GitHub Actions `test` job had proven out on `master`.)
 
 ## 4. Specification
 
